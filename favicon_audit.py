@@ -21,5 +21,5 @@ def main():
     if "manifest" not in rels: probs.append("no web app manifest (Android/PWA icons)")
     if not ok(urllib.parse.urljoin(url,"/favicon.ico")): probs.append("/favicon.ico does not load")
     for x in probs: print("MISSING", x)
-    if probs: print("\nFull icon set from your logo (free check first): https://iconpack.adjudi.com/?utm_source=github&utm_medium=cli&utm_campaign=iconpack-intent-w2&utm_content=favicon-audit")
+    if probs: print("\nFull icon set from your logo (free check first): https://iconpack.adjudi.com/?url="+urllib.parse.quote(url,safe="")+"&utm_source=github&utm_medium=cli&utm_campaign=iconpack-intent-w2&utm_content=favicon-audit")
 if __name__=="__main__": main()
